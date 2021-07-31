@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>profile</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://kit.fontawesome.com/4d97727376.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <p class="navbar-brand">COVi</p>
+          </div>
+            <ul class="nav navbar-nav navbar-right">
+              <li id="home"><a href="/">LOGOUT</a></li>
+              <li id="about"><a href="/">HOME</a></li>
+              <li id="contact"><a href="/contact">ABOUT-US</a></li>
+              <li id="contact"><a href="#precaution">PRECAUTIONS</a></li>
+            </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="profileHeader">
+
+
+
+      <div class="row">
+
+              <div class="col-lg-4 col1">
+                <img class="profileimg" src="/profile.png" alt="iphone-mockup">
+              </div>
+
+              <div class="col-lg-6 col2 ">
+                <div class="col-lg-2 col21 ">
+              <div class="Label">
+                <h3>Name :</h3>
+              </div>
+              <div class="Label">
+                  <h3>State :</h3>
+              </div>
+              <div class="Label">
+                  <h3>Pincode :</h3>
+              </div>
+              <div class="Label">
+                  <h3>Country :</h3>
+              </div>
+               </div>
+               <div class="col-lg-4 col22 ">
+                 <div class="Label1">
+                   <h3> <%=name%> </h3>
+                 </div>
+                 <div class="Label1">
+                     <h3><%=state%></h3>
+                 </div>
+                 <div class="Label1">
+                     <h3><%=pincode%></h3>
+                 </div>
+                 <div class="Label1">
+                     <h3>India</h3>
+                 </div>
+              </div>
+              <!-- <div class="col-lg-3">
+                <img class="profileimg" src="/profile.png" alt="iphone-mockup">
+              </div> -->
+            </div>
+
+            </div>
+    </div>
+  <hr>
+    <div class="header1">
+      <h1 style="color:#51c2d5 ">-COVID-19 CASES IN <%= state %></h1>
+
+    <div class="cases">
+      <div class="row">
+
+              <div class="col-lg-3 box" >
+                <div class="dim">
+                   <h3>Total Cases</h3>
+                  <h3>   <%= TOTAL %>  </h3>
+                </div>
+
+              </div>
+
+              <div class="col-lg-3 box" >
+                <div class="dim">
+                   <h3>Active Cases</h3>
+                <h3>    <%= ACTIVE %>  </h3>
+                </div>
+
+
+              </div>
+
+                        <div class="col-lg-3 box " >
+                          <div class="dim">
+                              <h3>Discharge</h3>
+                              <h3>    <%= DISCHARGE %>  </h3>
+                          </div>
+
+                        </div>
+
+                                  <div class="col-lg-3 box">
+                                    <div class="dim">
+                                          <h3>Death</h3>
+                                        <h3>    <%= DEAD %>   </h3>
+                                    </div>
+
+                                  </div>
+
+            </div>
+    </div>
+    </div>
+
+    <hr>
+    <div class="vaccineInfo">
+      <h1>Nearest Vaccination Center And Available Vaccine Slots</h1>
+      <div class="row " style="height:30px" >
+
+        <div class="col-lg-4 headerRow">
+            <h3>Center</h3>
+        </div>
+        
+              <div class="col-lg-4 headerRow">
+                <h3>For 18+</h3>
+              </div>
+              <div class="col-lg-4 headerRow">
+                <h3>For 45+</h3>
+              </div>
+
+    </div>
+
+  </div>
+<%  vaccAvailable.forEach(function(data){ %>
+
+  <div class="vaccineAvl">
+
+
+      <div class="row vaccInfo">
+              <div class="col-lg-4 blockCol">
+              <h3>  <%= data.blockName %> </h3>
+                <h3> <%= data.blockAddress %> </h3>
+              </div>
+
+                          <div class="col-lg-2 vaccCol">
+                            <h3><%= data.Avaccine1 %></h3>
+                            <p>Dose-1:<%= data.Adose11 %> | Dose-2:<%= data.Adose12 %></p>
+
+                          </div>
+                                    <div class="col-lg-2 vaccCol">
+                                      <h3><%= data.Avaccine2%></h3>
+                                      <p>Dose-1:<%= data.Adose21 %> | Dose-2:<%= data.Adose22 %></p>
+                                    </div>
+
+                                    <div class="col-lg-2 vaccCol">
+                                      <h3><%= data.Ovaccine1 %></h3>
+                                      <p>Dose-1:<%= data.Odose11 %> | Dose-2:<%= data.Odose12 %></p>
+
+                                    </div>
+
+                                    <div class="col-lg-2 vaccCol">
+                                      <h3><%= data.Ovaccine2 %></h3>
+                                      <p>Dose-1:<%= data.Odose21 %> | Dose-2:<%= data.Odose22 %></p>
+                                    </div>
+
+
+
+
+    </div>
+  </div>
+<% }) %>
+
+
+<footer id="footer">
+
+      <a href="">  <i class="icon-width fab fa-twitter"> </i> </a>
+
+        <!-- <a href="https://www.facebook.com/profile.php?id=100051652423242"> <i class="icon-width fab fa-facebook-f"> </i></a> -->
+
+      <a href="#">  <i class="icon-width fab fa-instagram"> </i></a>
+
+
+      <a href="#">  <i class="icon-width fas fa-envelope"> </i></a>
+
+  <p>© Copyright 2021 COVi</p>
+
+  </footer>
+  </body>
+</html>
+<!-- <div class="row " style="height:30px" >
+  <div class="col-lg-4" >
+
+  </div>
+
+        <div class="col-lg-4 headerRow">
+          <h3></h3>
+        </div>
+        <div class="col-lg-4 headerRow">
+          <h3>For 45+</h3>
+        </div>
+
+</div> -->

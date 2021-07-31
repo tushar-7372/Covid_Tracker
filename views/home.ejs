@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>vaccine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- ------------------fontawesome-------------- -->
+  <script src="https://kit.fontawesome.com/4d97727376.js" crossorigin="anonymous"></script>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+
+<div class="header">
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <p class="navbar-brand">COVi</p>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="home"><a href="/login">LOGIN/SIGNUP</a></li>
+          <li id="about"><a href="/">HOME</a></li>
+          <li id="contact"><a href="#aboutus">ABOUT-US</a></li>
+          <li id="contact"><a href="#precaution">PRECAUTIONS</a></li>
+        </ul>
+    </div>
+  </nav>
+</div>
+<div class="title1">
+  <div class="row">
+
+          <div class="col-lg-6">
+            <h1 class="big-heading">Vaccines are our one of the most important tools for preventing outbreaks and keeping the world safe..</h1>
+          </div>
+
+          <div class="col-lg-6 dim1">
+            <img class="titleimg1" src="/vaccine1.jpg" alt="iphone-mockup">
+
+          </div>
+
+        </div>
+</div>
+<hr>
+<div class="header1">
+  <h1 style="color:#51c2d5 ">Cases in India</h1>
+
+<div class="cases">
+  <div class="row">
+
+          <div class="col-lg-3 box" >
+            <div class="dim">
+               <h3>Total Cases</h3>
+              <h3><%= totalCases %></h3>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 box" >
+            <div class="dim">
+               <h3>Active Cases</h3>
+            <h3><%= activeCases %></h3>
+            </div>
+
+
+          </div>
+
+                    <div class="col-lg-3 box " >
+                      <div class="dim">
+                          <h3>Discharge</h3>
+                          <h3><%= Discharge %> </h3>
+                      </div>
+
+                    </div>
+
+                              <div class="col-lg-3 box">
+                                <div class="dim">
+                                    <h3>Death</h3>
+                                    <h3><%= death %></h3>
+                                </div>
+
+                              </div>
+
+        </div>
+</div>
+</div>
+<hr>
+<script>
+  function ddlselect(){
+    var d=document.getElementById("state");
+    var displaytext=d.options[d.selectedIndex].text;
+    document.getElementById("textValue").value=displaytext;
+  }
+</script>
+<div class="header1" >
+    <h1 style="color:#51c2d5"> StateWise COVID-19 Cases </h1>
+  <!-- <h1 style="color:#51c2d5">Enter State Name</h1>
+  <form class="" action="/" method="post">
+    <label>State Name</label>
+    <input type="text" name="stateName" value="">
+    <button type="submit" name="button">stats</button>
+  </form> -->
+  <form class="stateForm" action="/" method="post">
+  <label>Select State Name:</label><br>
+  <select name="state" id="state" class="form-control size" onchange="ddlselect();">
+<option value="Andhra Pradesh">Andhra Pradesh</option>
+<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+<option value="Assam">Assam</option>
+<option value="Bihar">Bihar</option>
+<option value="Chandigarh">Chandigarh</option>
+<option value="Chhattisgarh">Chhattisgarh</option>
+<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+<option value="Daman and Diu">Daman and Diu</option>
+<option value="Delhi">Delhi</option>
+<option value="Lakshadweep">Lakshadweep</option>
+<option value="Puducherry">Puducherry</option>
+<option value="Goa">Goa</option>
+<option value="Gujarat">Gujarat</option>
+<option value="Haryana">Haryana</option>
+<option value="Himachal Pradesh">Himachal Pradesh</option>
+<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+<option value="Jharkhand">Jharkhand</option>
+<option value="Karnataka">Karnataka</option>
+<option value="Kerala">Kerala</option>
+<option value="Madhya Pradesh">Madhya Pradesh</option>
+<option value="Maharashtra">Maharashtra</option>
+<option value="Manipur">Manipur</option>
+<option value="Meghalaya">Meghalaya</option>
+<option value="Mizoram">Mizoram</option>
+<option value="Nagaland">Nagaland</option>
+<option value="Odisha">Odisha</option>
+<option value="Punjab">Punjab</option>
+<option value="Rajasthan">Rajasthan</option>
+<option value="Sikkim">Sikkim</option>
+<option value="Tamil Nadu">Tamil Nadu</option>
+<option value="Telangana">Telangana</option>
+<option value="Tripura">Tripura</option>
+<option value="Uttar Pradesh">Uttar Pradesh</option>
+<option value="Uttarakhand">Uttarakhand</option>
+<option value="West Bengal">West Bengal</option>
+</select>
+<input type="text" name="stateName" id="textValue">
+<button type="submit" name="button">Check</button>
+</form>
+  <h1 style="color:#51c2d5"> <%= stateInfo %> </h1>
+</div>
+<div class="cases">
+  <div class="row">
+
+          <div class="col-lg-3 box" >
+            <div class="dim">
+               <h3>Total Cases</h3>
+              <h3><%= StotalCases %></h3>
+            </div>
+
+          </div>
+
+          <div class="col-lg-3 box" >
+            <div class="dim">
+               <h3>Active Cases</h3>
+            <h3><%= StotalCases %></h3>
+            </div>
+
+
+          </div>
+
+                    <div class="col-lg-3 box " >
+                      <div class="dim">
+                          <h3>Discharge</h3>
+                      <h3>  <%= SDischarge %></h3>
+                      </div>
+
+                    </div>
+
+                              <div class="col-lg-3 box">
+                                <div class="dim">
+                                    <h3>Death</h3>
+                                  <h3>  <%= Sdeath %></h3>
+                                </div>
+
+                              </div>
+
+        </div>
+</div>
+<hr>
+<div class="habbit" id="precaution">
+  <h1>Precautions</h1>
+  <div class="habbit1">
+
+        <div class="skill-row2">
+          <img class="comp" src="/habbit2.jpg" alt="">
+          <h2>Hand Wash</h2>
+        <h3>Wash your hands often with soap and water for at least 20 seconds.</h3>
+        </div>
+
+
+
+                    <div class="skill-row1">
+                      <img class="setting2" src="/habbit3.jpg" alt="">
+                      <h2>Use Sanatizer</h2>
+                      <h3>Clean and disinfect surfaces around your home and work frequently.</h3>
+                    </div>
+
+
+                          <div class="skill-row2">
+                            <img class="comp" src="/habbit4.jpg" alt="">
+                            <h2>Social Distancing</h2>
+                          <h3>Keep at least 6 feet between yourself and others if you must be in public.</h3>
+                          </div>
+
+
+                                <div class="skill-row1">
+                                  <img class="setting2" src="/habbit1.jpg" alt="">
+                                <h2>Use Double Mask</h2>
+                                 <h3>Wear a cloth face covering over your mouth and nose with surgical Mask inside your cloth mask when around others.</h3>
+                                </div>
+  </div>
+
+</div>
+<hr>
+<div class="habbit" id="aboutus">
+  <h1>About Us</h1>
+  <div class="habbit1">
+
+    <div class="skill-row2">
+      <img class="comp" src="/about.png" alt="">
+      <h2>Piyush kumar</h2>
+        <a href="https://github.com/piyushrocky">  <i class="fab fa-github fa-3x"></i> </a>
+        <a href="https://github.com/piyushrocky">  <i class="fab fa-linkedin fa-3x"></i> </a>
+    <!-- <h3><a href="https://github.com/piyushrocky"></a></h3>
+    <h3><a href="https://github.com/piyushrocky"></a></h3> -->
+    </div>
+
+
+
+                <div class="skill-row2">
+                  <img class="comp" src="/about.png" alt="">
+                  <h2>Tushar Kumar</h2>
+                  <a href="https://github.com/tushar-7372"><i class="fab fa-github fa-3x"></i></a>
+                  <a href="https://www.linkedin.com/in/tushar-kumar-746950185/"><i class="fab fa-linkedin fa-3x"></i></a>
+                </div>
+
+
+
+  </div>
+
+</div>
+
+<footer id="footer">
+
+      <a href="">  <i class="icon-width fab fa-twitter"> </i> </a>
+
+        <a href="https://www.facebook.com/profile.php?id=100051652423242"> <i class="icon-width fab fa-facebook-f"> </i></a>
+
+      <a href="#">  <i class="icon-width fab fa-instagram"> </i></a>
+
+
+      <a href="#">  <i class="icon-width fas fa-envelope"> </i></a>
+
+  <p>© Copyright 2021 COVi</p>
+
+  </footer>
+
+
+  </body>
+</html>
